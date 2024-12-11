@@ -51,8 +51,6 @@ for (let i = 0; i < menuLinks.length ;  i++ ) {
   newEl.innerText = menuLinks[i].text;
 
   newEl.addEventListener("click", (event) => {
-    let button = event.target;
- 
     event.preventDefault();
     mainEl.innerHTML = `<h1>${menuLinks[i].subText}</h1>`;
     formDiv.innerHTML =menuLinks[i].innerHTML;
@@ -83,9 +81,7 @@ function bindSpecial()
 
   form = document.getElementById("form");
   if(form) {
-    fullName = form.elements["name"];
     email = form.elements["email"];
-    
     form.addEventListener("submit", validate);
   }
 }
@@ -103,7 +99,6 @@ function highlight(el)
 }
 
 let form;
-let fullName;
 let email;
 
 function validate(evt) {
