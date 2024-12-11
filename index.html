@@ -9,7 +9,6 @@
   
     <header>
       <nav id="top-menu"></nav>
-      <nav id="sub-menu"></nav>
     </header>
     <main>
     </main>
@@ -21,22 +20,19 @@
       method="POST"
       id="form" >
         
-        <input type="text" name="name" placeholder="Name" />
-        <input type="text" name="email" placeholder="Email" />
-        <input type="text" name="zip" placeholder="Zip Code" />
-        <select name="country">
-          <option value="">Select Country</option>
-          <option value="USA">USA</option>
-          <option value="UK">UK</option>
-          <option value="UAE">UAE</option>
-        </select>
-        <input type="password" name="password" placeholder="Password" />
+        <input type="text" name="name" placeholder="Name" pattern="^[a-zA-Z]+" required/>
+        <input type="text" name="email" placeholder="Email" required/>
+        <input type="text" name="zip" placeholder="Zip Code" pattern="\d{5}" required/>
+        <input type="text" name="message" placeholder="Message" required/>
         <input type="submit" value="Submit" />
      </form>
     </div>
 
   <div id="cat">
-    <img src="./img/cat.gif"></img>
+    <a href="#" id="catLink"><img src="./img/cat.gif"></img></a>
+    <div>
+      <h2>Click him to take him with you</h2>
+    </div>
   </div>
 
   <div id="about">
