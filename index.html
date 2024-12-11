@@ -1,17 +1,46 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ALAB DOM Manipulation</title>
+    <title>SBA DOM Manipulation</title>
     <meta charset="UTF-8" />
   </head>
 
-  <body>
+  <body>    
+  
     <header>
       <nav id="top-menu"></nav>
       <nav id="sub-menu"></nav>
     </header>
-    <main></main>
+    <main>
+    </main>
 
-    <script src="src/index.js"></script>
+    <div id="formDiv">
+      <form
+      action="javascript: alert('Success!');"
+      name="myForm"
+      method="POST"
+      id="form" >
+        
+      <input type="text" name="name" placeholder="Name" />
+      <input type="text" name="email" placeholder="Email" />
+      <input type="text" name="zip" placeholder="Zip Code" />
+      <select name="country">
+        <option value="">Select Country</option>
+        <option value="USA">USA</option>
+        <option value="UK">UK</option>
+        <option value="UAE">UAE</option>
+      </select>
+      <input type="password" name="password" placeholder="Password" />
+      <input type="submit" value="Submit" />
+    </form>
+  </div>
+  
+  <div id="cat" width="500px">
+    <img src="./img/cat.png">
+  </div>
+
+  <link rel="stylesheet" href="style/style.css">
+  <script src="src/index.js"></script>
+
   </body>
 </html>

@@ -4,14 +4,14 @@
 
 /* CSS Custom Properties */
 :root {
-  --main-bg: #4a4e4d;
-  --top-menu-bg: #0e9aa7;
-  --sub-menu-bg: #3da4ab;
+  --main-bg: #515a8d;
+  --top-menu-bg: #00000081;
+  --sub-menu-bg: #d6d5cb;
 }
 
 body {
   font-family: Tahoma, Geneva, sans-serif;
-  height: 100vh;
+  background-color: var(--sub-menu-bg);
   margin: 0;
   display: grid;
   grid-template-rows: 3rem auto;
@@ -45,19 +45,36 @@ nav a {
 header,
 #top-menu {
   position: relative;
-}
-#top-menu {
   z-index: 20;
 }
-#sub-menu {
-  width: 100%;
-  z-index: 10;
-  transition: top 0.5s ease-out;
-}
-#sub-menu a:hover {
-  background-color: var(--top-menu-bg);
-}
+
 nav a.active {
   background-color: var(--sub-menu-bg);
   color: var(--main-bg);
+}
+
+#main{
+  height:100px;
+}
+
+/*Form*/
+
+#formDiv
+{
+  background-color: var(--sub-menu-bg);
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10%;
+}
+
+input,
+select {
+  width: 200px;
+  padding: 3px 5px;
+  margin-bottom: 10px;
+  border: 1px solid black;
+  border-radius: 3px;
 }
