@@ -1,15 +1,21 @@
-var menuLinks = [
-  { text: "About", href: "/about" },
+let menuLinks = [
+  { text: "About", 
+    subText: "A little about the website",
+    href: "/about" 
+  },
   {
     text: "Catalog",
     href: "#",
+
   },
   {
     text: "Contact",
     href: "#",
-  },
+    subText: "Use this form to theoretically contact me"
+   },
   {
     text: "Cat",
+    subText: "This is a cat",
     href: "#",
   },
 ];
@@ -35,24 +41,38 @@ const catDiv = document.getElementById("cat");
 menuLinks[3].innerHTML=catDiv.innerHTML;
 catDiv.innerHTML="";
 
+const aboutDiv = document.getElementById("about");
+menuLinks[0].innerHTML=aboutDiv.innerHTML;
+aboutDiv.innerHTML="";
+
+const frag = document.createDocumentFragment();
 
 for (let i = 0; i < menuLinks.length ;  i++ ) {
-  let newEl = document.createElement("A");
+  let newEl = frag.appendChild(document.createElement("A"));
   newEl.setAttribute("href", menuLinks[i].href);
   newEl.innerText = menuLinks[i].text;
-  topMenuEl.appendChild(newEl);
-
-
 
   newEl.addEventListener("click", (event) => {
-    let setActive = false;
     let button = event.target;
  
     event.preventDefault();
-    mainEl.innerHTML = `<h1>${menuLinks[i].text}</h1>`;
-    formDiv.innerHTML = menuLinks[i].innerHTML;
-    
-
-
+    mainEl.innerHTML = `<h1>${menuLinks[i].subText}</h1>`;
+    formDiv.innerHTML =menuLinks[i].innerHTML;
+    highlight(newEl);
   });
+
+}
+
+topMenuEl.append(frag);
+
+highlight();
+function highlight(el)
+{
+  for(node of topMenuEl.childNodes)
+  {
+    if(el==node)
+     node.style.color="yellow";
+    else
+      node.style.color="white";
+  }  
 }
